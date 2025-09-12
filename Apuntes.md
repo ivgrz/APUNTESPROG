@@ -3,5 +3,5 @@
 ## Tabla *AND*
 ![tabla.jpg](img/tabla.jpg)
 
-## Tabla *OR*
+## Tabla *OR* :)
 ![tabla2.jpg](img/tabla2.jpg)
