@@ -35,3 +35,7 @@ print(7//3)
 print(7%3)
 # ~ -> negacion
 print(~numBinario)
+print (2&3)
+print (0b10 & 0b11)
+print(0b10 | 0b11 )
+print(2|3)
