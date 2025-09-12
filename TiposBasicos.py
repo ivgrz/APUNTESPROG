@@ -23,9 +23,15 @@ print (type(booleano))
 numHexadecimal = 0x15A
 numOctal = 0o3457
 real = 0.1e-3
+numBinario = 0b100110
 
 print(type(numHexadecimal))
 print(type(numOctal))
 print(real)
 print(numOctal)
 
+print(7/3)
+print(7//3)
+print(7%3)
+# ~ -> negacion
+print(~numBinario)
