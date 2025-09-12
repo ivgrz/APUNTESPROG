@@ -39,3 +39,11 @@ print (2&3)
 print (0b10 & 0b11)
 print(0b10 | 0b11 )
 print(2|3)
+print(2^3)
+
+si = True
+No = False
+
+print (si and No)
+print (si or No)
+print (not si)
