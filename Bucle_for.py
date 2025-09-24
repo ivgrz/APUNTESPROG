@@ -15,6 +15,7 @@ bucle_for1()
 def bucle_for2():
     t = (1,2,3,4,5,6,7,8,9,10)
     suma = 0
+# la variable que se toma como indice debe ser escrita siempre en singular
     for elemento in t:
         suma = suma + elemento
     print(f"La suma de todos los numeros es: {suma}")
