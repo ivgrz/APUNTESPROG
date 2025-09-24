@@ -1,3 +1,7 @@
+"""
+TIPOS DE COLECCIONES DE PYTHON
+"""
+
 l = [10,20,[30,"Treinta","XXXX"], 40, 50] #lista
 t = (10,20,30,40,50,60,70,80,90,100) #tupla
 

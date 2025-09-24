@@ -1,3 +1,6 @@
+"""
+TIPOS DE VARIABLES BASICOS DE PYTHON
+"""
 #Declaramos variables segun su tipo y los mostramos por pantalla (contenid y tipo) :))
 
 entero = 5
