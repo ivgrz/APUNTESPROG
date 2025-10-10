@@ -9,12 +9,12 @@ def eliminar_espacios_final_inicio(cadena):
 
     # Avanza mientras haya espacios
 
-    while inicio <= fin and cadena[inicio] == " ": #El while se detiene al encontrar un espacio
+    while inicio <= fin and cadena[inicio] == " ": #El while se detiene al encontrar una letra
         inicio += 1
 
     # Retrocede mientras haya espacios
 
-    while fin >= inicio and cadena[fin] == " ": #El while se detiene al encontrar un espacio
+    while fin >= inicio and cadena[fin] == " ": #El while se detiene al encontrar una letra
         fin -= 1
 
     # Devolvemos el texto sin espacios en los extremos
