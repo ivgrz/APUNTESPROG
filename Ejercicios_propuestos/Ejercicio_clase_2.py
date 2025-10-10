@@ -14,10 +14,13 @@ def generador_contrasena():
 
     #Conjunto de caracteres permitidos
 
-    letras_minus = string.ascii_lowercase
-    letras_mayus = string.ascii_uppercase
-    numeros = string.digits
-    simbolos = string.punctuation
+    letras_minus = string.ascii_lowercase # Usamos string.ascii_lowercase para obtener todas las letras minusculas
+
+    letras_mayus = string.ascii_uppercase # Usamos string.ascii_uppercase para obtener todas las letras mayusculas
+
+    numeros = string.digits # Usamos string.digits para obtener todos los digitos del 0 al 9
+
+    simbolos = string.punctuation # Usamos string.punctuation para obtener todos los simbolos
 
     # Unimos todos los caracteres permitidos
 
