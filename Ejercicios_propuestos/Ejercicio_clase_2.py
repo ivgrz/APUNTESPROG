@@ -27,8 +27,12 @@ def generador_contrasena():
     contrasena = ''
 
     for i in range(longitud):
-        caracter_aleatorio = random.choice(todos) # Elegimos cualquier caracter de los permitidos
+        # Elegimos cualquier caracter de los permitidos
+        caracter_aleatorio = random.choice(todos)
+        # Usamos random.choice para elegir un caracter aleatorio de la cadena 'todos'
         contrasena += caracter_aleatorio
+        # Usamos += para ir concatenando los caracteres aleatorios a la variable contrasena
     return contrasena
+        # Devolvemos la contraseña generada
 
 print(f"Contraseña generada: {generador_contrasena()}")
