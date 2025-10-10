@@ -8,6 +8,7 @@ import random
 import string
 
 def generador_contrasena():
+    # Usamos random.randint para generar un numero aleatorio entre 6 y 12 que va a ser la longitud final de la contraseña
 
     longitud = random.randint(6,12) #Generamos una cadena aleatoria de valores con los parametros entre 6 y 12
 
@@ -25,7 +26,7 @@ def generador_contrasena():
     # Generamos una contraseña aleatoria con estos parametros
 
     contrasena = ''
-
+    # Cuando usamos in range(longitud), la variable i toma valores desde 0 hasta longitud-1
     for i in range(longitud):
         # Elegimos cualquier caracter de los permitidos
         caracter_aleatorio = random.choice(todos)
