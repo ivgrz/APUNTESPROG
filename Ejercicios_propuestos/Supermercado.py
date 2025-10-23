@@ -37,8 +37,15 @@ def supermercado():
 
         print(f"\n El contenido de la caja {numero_caja} es: ")
         for valor, cantidad in contenido_caja:
-            unidad_texto = "unidad" if cantidad == 1 else "unidades"
-            print(f"- {cantidad} {unidad_texto} de ${valor:.2f} = ${valor*cantidad:.2f}")
+            es_singular = (cantidad == 1)
+            if valor >= 5:
+                tipo_dinero = "billete" if es_singular else "billetes"
+            elif valor >= 1:
+                tipo_dinero = "monedas"
+            else:
+                tipo_dinero = "monedas"
+
+            print(f"- {cantidad} {tipo_dinero} de ${valor:.2f} = ${valor*cantidad:.2f}")
 
         print(f"\n Importe de la caja {numero_caja}: {importe_caja:.2f}")
         print("-"*30)
@@ -54,9 +61,14 @@ def supermercado():
     for valor in denominaciones_ordenadas:
         cantidad_total = contenido_consolidado[valor]
         total_monetario = valor * cantidad_total
-
-        unidad_texto = "unidad" if cantidad_total == 1 else "unidades"
-        print(f"- {cantidad_total} {unidad_texto} de ${valor:.2f} = ${total_monetario:.2f}")
+        es_singular = (cantidad_total == 1)
+        if valor >= 5:
+            tipo_dinero = "billete" if es_singular else "billetes"
+        elif valor >= 1:
+            tipo_dinero = "monedas"
+        else:
+            tipo_dinero = "monedas"
+        print(f"- {cantidad_total} {tipo_dinero} de ${valor:.2f} = ${total_monetario:.2f}")
 
 
 # MUESTRA TOTAL DEL IMPORTE
