@@ -21,6 +21,13 @@ def supermercado():
         importe_caja = 0
         # Calculamos el importe total por cada caja
         for valor, cantidad in contenido_caja:
+
+            # Usamos un for con 2 indices cuando la lista esta conformada de listas o tuplas,
+            # python usa desempaquetamiento para y le asigna el indice a cada valor}
+            # Por ejemplo, aqui, en la lista 1, le asignaria el indice valor a 50 y cantidad a 13
+            # El 1, 2 y 3 los usamos solo como numero de caja,
+            # por eso el contenido se inicia con caja[1:] (que inicie con el 2do elemento (1) de la lista
+
             importe_caja += valor * cantidad
             valor_denominacion = valor
             contenido_consolidado[valor_denominacion] = contenido_consolidado.get(valor_denominacion, 0) + cantidad
