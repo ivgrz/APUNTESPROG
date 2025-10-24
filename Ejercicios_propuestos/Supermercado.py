@@ -30,6 +30,11 @@ def supermercado():
 
             importe_caja += valor * cantidad
             valor_denominacion = valor
+            # El contenido consolidado es un diccionario donde la clave es la denominacion
+            # y el valor es la cantidad total de esa denominacion en todas las cajas
+            # Si la denominacion ya existe, sumamos la cantidad
+            # Si no existe, la inicializamos con la cantidad actual
+            # Usamos el metodo get para obtener el valor actual o 0 si no existe
             contenido_consolidado[valor_denominacion] = contenido_consolidado.get(valor_denominacion, 0) + cantidad
 
         # Acumulamos el importe total
