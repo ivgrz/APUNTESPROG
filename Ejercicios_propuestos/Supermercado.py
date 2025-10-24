@@ -29,6 +29,7 @@ def supermercado():
             # por eso el contenido se inicia con caja[1:] (que inicie con el 2do elemento (1) de la lista
 
             importe_caja += valor * cantidad
+            # El += es para acumular el valor en cada iteracion, funciona como importe_caja = importe_caja + (valor * cantidad)
             valor_denominacion = valor
             # El contenido consolidado es un diccionario donde la clave es la denominacion
             # y el valor es la cantidad total de esa denominacion en todas las cajas
