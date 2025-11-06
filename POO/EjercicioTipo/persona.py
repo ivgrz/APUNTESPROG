@@ -35,4 +35,12 @@ class Persona:
 
 		return cadena
 
+	def __eq__(self, otrap):
+
+		return self.dni == otrap.dni
+	def __gt__(self, otrap):
+		return self.edad > otrap.edad
+
+	def __lt__(self, otrap):
+		return self.edad < otrap.edad
 
