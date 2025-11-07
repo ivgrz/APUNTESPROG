@@ -1,3 +1,4 @@
+from circulo import Circulo
 from punto import Punto
 from persona import Persona
 
@@ -24,3 +25,6 @@ print(manuel)
 print(manuela == manuel)
 print(manuela > manuel)
 print(manuela < manuel)
+
+c = Circulo(2,3,5)
+print(c.Cadena())
