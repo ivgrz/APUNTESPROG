@@ -1,7 +1,8 @@
+from POO.EjercicioTipo.Cilindro import Cilindro
 from circulo import Circulo
 from punto import Punto
 from persona import Persona
-
+from Cilindro import Cilindro
 p1 = Punto(2,3)
 p2 = Punto (9,1)
 p2.x = 2
@@ -26,5 +27,8 @@ print(manuela == manuel)
 print(manuela > manuel)
 print(manuela < manuel)
 
-c = Circulo(2,3,5)
+c = Circulo(4,3,5)
 print(c.Cadena())
+
+ci = Cilindro(2,3,7,6)
+print(ci.Cadena())

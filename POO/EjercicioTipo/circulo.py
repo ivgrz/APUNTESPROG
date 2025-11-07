@@ -1,6 +1,5 @@
 import math
 
-from TiposBasicos import cadena
 from punto import Punto
 
 class Circulo (Punto):
@@ -33,7 +32,6 @@ class Circulo (Punto):
 	def Cadena(self):
 		cadena = (f"{super().toString()}\n"
 				  f"\nCREAMOS CIRCULO\n"
-				f"Centro: ({self.x}, {self.y})\n"
 				  f"Radio: {self.radio:.2f}\n"
 				f"Diametro: {self.ObtenerDiametro()}\n"
 				f"Area: {self.CalcularArea():.2f}\n"
