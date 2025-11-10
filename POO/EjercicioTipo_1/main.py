@@ -1,4 +1,4 @@
-from POO.EjercicioTipo.Cilindro import Cilindro
+from POO.EjercicioTipo_1.Cilindro import Cilindro
 from circulo import Circulo
 from punto import Punto
 from persona import Persona
