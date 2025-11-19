@@ -5,7 +5,7 @@ class Punto:
 
 
 	def toString(self):
-		cadenapunto = f"Las coordenadas del punto son \n ({self.x}, {self.y})"
+		cadenapunto = f"El centro de la figura esta en ({self.x}, {self.y})"
 		return cadenapunto
 
 	def __str__(self):

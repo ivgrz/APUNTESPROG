@@ -16,7 +16,7 @@ class Esfera(Circulo):
 	def Cadena(self):
 		Cadena = (
 			f"\n------ CREACION DE ESFERA -------\n"
-			f"El centro de la esfera esta en {super().toString()}\n"
+			f"{super().toString()}\n"
 			f"El radio de la esfera es de {self.radio:.2f}\n"
 			f"El area de esta esfera es de {self.CalcularArea():.2f}\n"
 			f"El volumen de esta esfera es de {self.calcularVolumen():.2f}"

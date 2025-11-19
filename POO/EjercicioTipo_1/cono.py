@@ -22,7 +22,7 @@ class Cono(Circulo):
 	def __str__(self):
 		return (
 			f"\n----- CREANDO CONO -----\n"
-			f"El centro del cono esta en {super().toString()}\n"
+			f"{super().toString()}\n"
 			f"El radio del cono es de {self.radio} metros\n"
 			f"La altura del cono es  de {self.h} metros\n"
 			f"El area del cono es {self.CalcularArea():.2f}\n"

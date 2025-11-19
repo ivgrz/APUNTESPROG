@@ -15,9 +15,9 @@ class Cilindro(Circulo):
 		return super().CalcularArea() * self.altura
 
 	def Cadena(self):
-		cadena = (
+		cadena = ( f"\n CREAMOS CILINDRO\n"
 			f"{super().toString()}\n"
-			f"\n CREAMOS CILINDRO\n"
+			
 			f"Radio: {self.radio:.2f}, Altura: {self.altura:.2f} "
 			f"Area: {self.CalcularArea():.2f}, Volumen: {self.CalcularVolumen():.2f}"
 		)
