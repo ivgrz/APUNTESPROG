@@ -30,8 +30,9 @@ class Circulo (Punto):
 		return (math.pi) * self.radio ** 2
 
 	def Cadena(self):
-		cadena = (f"{super().toString()}\n"
-				  f"\nCREAMOS CIRCULO\n"
+		cadena = (f"CREAMOS CIRCULO\n"
+				  f"{super().toString()}\n"
+				  
 				  f"Radio: {self.radio:.2f}\n"
 				f"Diametro: {self.ObtenerDiametro()}\n"
 				f"Area: {self.CalcularArea():.2f}\n"
