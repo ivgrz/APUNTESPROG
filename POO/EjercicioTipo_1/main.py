@@ -1,8 +1,10 @@
 from POO.EjercicioTipo_1.Cilindro import Cilindro
+from POO.EjercicioTipo_1.Esfera import Esfera
 from circulo import Circulo
 from punto import Punto
 from persona import Persona
 from Cilindro import Cilindro
+from Esfera import Esfera
 p1 = Punto(2,3)
 p2 = Punto (9,1)
 p2.x = 2
@@ -30,5 +32,8 @@ print(manuela < manuel)
 c = Circulo(4,3,5)
 print(c.Cadena())
 
-ci = Cilindro(2,3,7,6)
+ci = Cilindro(4,3,5,6)
 print(ci.Cadena())
+
+esf = Esfera(4,3,5)
+print(esf)
