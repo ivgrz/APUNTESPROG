@@ -2,19 +2,17 @@ import math
 
 from TiposBasicos import cadena
 from punto import Punto
+from POO.EjercicioTipo_1.circulo import Circulo
 
-class Cilindro(Punto):
-	def __init__(self,x,y,radio,altura):
-		super().__init__(
-			x,y
-		)
-		self.radio = abs(radio)
+class Cilindro(Circulo):
+	def __init__(self,x=0.0,y=0.0,radio=1.0,altura=1.0):
+		super().__init__(x,y,radio)
 		self.altura = abs(altura)
 
 	def CalcularArea(self):
 		return 2 * math.pi * self.radio * (self.radio + self.altura)
 	def CalcularVolumen(self):
-		return math.pi * (self.radio ** 2) * self.altura
+		return super().CalcularArea() * self.altura
 
 	def Cadena(self):
 		cadena = (
@@ -24,4 +22,7 @@ class Cilindro(Punto):
 			f"Area: {self.CalcularArea():.2f}, Volumen: {self.CalcularVolumen():.2f}"
 		)
 		return cadena
+
+	def __str__(self):
+		return self.Cadena()
 
