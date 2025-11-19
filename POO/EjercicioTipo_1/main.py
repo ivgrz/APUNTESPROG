@@ -5,6 +5,9 @@ from punto import Punto
 from persona import Persona
 from Cilindro import Cilindro
 from Esfera import Esfera
+from cono import Cono
+
+
 p1 = Punto(2,3)
 p2 = Punto (9,1)
 p2.x = 2
@@ -37,3 +40,6 @@ print(ci.Cadena())
 
 esf = Esfera(4,3,5)
 print(esf)
+
+cono = Cono(4,3,5,6)
+print(cono)
