@@ -6,7 +6,7 @@ from persona import Persona
 from Cilindro import Cilindro
 from Esfera import Esfera
 from cono import Cono
-
+from Tronco_cono import Cono_truncado
 
 p1 = Punto(2,3)
 p2 = Punto (9,1)
@@ -43,3 +43,6 @@ print(esf)
 
 cono = Cono(4,3,5,6)
 print(cono)
+
+cono_t = Cono_truncado(4,3,8,6,5)
+print(cono_t)
