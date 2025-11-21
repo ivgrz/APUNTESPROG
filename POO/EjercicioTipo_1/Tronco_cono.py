@@ -27,11 +27,11 @@ class Cono_truncado(Cono):
 		return (1/3) * math.pi	* h * (R**2 * r**2 + R*r)
 
 	def __str__(self):
-		return (f"---- CREAMOS CONO TRUNCADO ----"
-				f"{super().toString()}"
-				f"Radio mayor : {self.radio}"
-				f"Radio menor : {self.rmen}"
-				f"Altura: {self.h}"
-				f"Area: {self.CalcularAreaTotal()}"
+		return (f"---- CREAMOS CONO TRUNCADO ----\n"
+				f"{super().toString()}\n"
+				f"Radio mayor : {self.radio}\n"
+				f"Radio menor : {self.rmen}\n"
+				f"Altura: {self.h}\n"
+				f"Area: {self.CalcularAreaTotal()}\n"
 				f"Volumen: {self.calcularVolumen()}")
 

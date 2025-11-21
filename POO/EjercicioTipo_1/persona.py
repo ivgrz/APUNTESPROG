@@ -1,5 +1,7 @@
+from Fecha import Fecha
+
 class Persona:
-	def __init__(self, nombre, edad, dni, direccion, nacionalidad):
+	def __init__(self, nombre, edad, dni, direccion, nacionalidad, fecha_nacimiento: Fecha):
 		self.nombre = nombre
 
 		if self.comprobaredad(edad):
@@ -12,6 +14,8 @@ class Persona:
 			self.dni = "00000000X"
 		self.direccion = direccion
 		self.nacionalidad = nacionalidad
+
+		self.fecha_nacimiento = fecha_nacimiento
 
 	def comprobaredad(self, edad):
 			if isinstance(edad, int) and edad >= 0 and edad <= 150:
@@ -31,7 +35,7 @@ class Persona:
 		else:
 			return False
 	def __str__(self):
-		cadena = f"Nombre: {self.nombre}\n Dni: {self.dni}\n direccion: {self.direccion}"
+		cadena = f"Nombre: {self.nombre}\n Dni: {self.dni}\n direccion: {self.direccion}\n Nacionalidad: {self.nacionalidad}\n {self.fecha_nacimiento}"
 
 		return cadena
 
