@@ -26,51 +26,57 @@ class Hora:
 
 	# METODOS
 
-	def convertir_minutos(self, minutos):
+	def normalizar_tiempo(self):
+		if self.__segundo >= 60:
+			acarreo_minutos = self.__segundo // 60
+			self.__segundo %= 60
+			self.__minuto += acarreo_minutos
+		if self.__minuto >= 60:
+			acarreo_horas = self.__minuto // 60
+			self.__minuto %= 60
+			self.__hora = (self.__hora + acarreo_horas) % 24
 
-		if minutos >= 60:
-			self.__hora += 1
-			minutos -= 60
-		else:
-			self.__minuto = minutos
 
-		return self.__hora , self.__minuto
 
-	def convertir_segundos(self, segundos):
 
-		if segundos >= 60:
-			self.__minuto += 1
-			segundos -= 60
-		else:
-			self.__segundo = segundos
-
-		return self.__minuto, self.__segundo
 
 	def incrementar_minutos(self, minutos):
 
-		n_minutos = self.__minuto + minutos
+		self.__minuto += minutos
+		self.normalizar_tiempo()
+		return self
 
-		return n_minutos
 
 	def incrementar_segundos(self, segundos):
 
-		n_segundos = self.__segundo + segundos
+		self.__segundo += segundos
+		self.normalizar_tiempo()
+		return self
 
-		return n_segundos
+	def incrementar_minuto(self, minutos):
+
+		self.__minuto += minutos
+		self.normalizar_tiempo()
+		return self
 
 	def incrementar_horas(self, horas):
 
-		n_horas = self.__hora + horas
-
-		return n_horas
+		self.__hora = (self.__hora + horas) % 24
 
 	# Mostrar formato 12 horas
+	def mostrar_formato_12horas(self):
+		horas_12 = self.__hora % 12
+		if horas_12 == 0:
+			horas_12 = 12
+
+		am_pm = "AM" if self.__hora < 12 else "PM"
+		return (
+				f"{horas_12}: {self.__minuto}: {self.__segundo} {am_pm}")
 
 	def __str__(self):
 
 
 		return (
-			f"=== Horas ==="
-			f"La hora original es {self.__hora}:{self.__minuto}:{self.__segundo}"
-			f""
+
+			self.mostrar_formato_12horas()
 		)
