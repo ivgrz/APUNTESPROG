@@ -5,7 +5,7 @@ from Hora import Hora
 if __name__ == '__main__':
 
     hora1 = Hora(
-        12, 30, 20
+        11, 30, 20
     )
 
 
@@ -22,7 +22,7 @@ if __name__ == '__main__':
 
         if opcion == 4:
             print("Saliendo del programa...")
-            sys.exit() # Sales del programa como unn break
+            sys.exit() # Sales del programa como un break
         try:
             if opcion == 1:
                 try:

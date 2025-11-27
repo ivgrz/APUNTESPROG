@@ -26,12 +26,17 @@ class Hora:
 
 	# METODOS
 
-	def normalizar_tiempo(self):
+
+
+	def convertir_segundos(self):
+
 		if self.__segundo >= 60:
 			acarreo_minutos = self.__segundo // 60
 			self.__segundo %= 60
 			self.__minuto += acarreo_minutos
+	def convertir_minutos(self):
 		if self.__minuto >= 60:
+
 			acarreo_horas = self.__minuto // 60
 			self.__minuto %= 60
 			self.__hora = (self.__hora + acarreo_horas) % 24
@@ -40,24 +45,21 @@ class Hora:
 
 
 
+
 	def incrementar_minutos(self, minutos):
 
 		self.__minuto += minutos
-		self.normalizar_tiempo()
+		self.convertir_minutos()
 		return self
 
 
 	def incrementar_segundos(self, segundos):
 
 		self.__segundo += segundos
-		self.normalizar_tiempo()
+		self.convertir_segundos()
 		return self
 
-	def incrementar_minuto(self, minutos):
 
-		self.__minuto += minutos
-		self.normalizar_tiempo()
-		return self
 
 	def incrementar_horas(self, horas):
 
