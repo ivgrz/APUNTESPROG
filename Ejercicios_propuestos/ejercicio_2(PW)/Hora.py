@@ -72,8 +72,8 @@ class Hora:
 
     # SETTERS
     def setHora(self, hora):
-        """Setter para hora con validación"""
-        if 0 <= hora <= 24:
+        """Setter para hora con validación (0-23)"""
+        if 0 <= hora <= 23:
             self.__hora = hora
         else:
             self.__hora = 0
@@ -151,6 +151,25 @@ class Hora:
     def __str__(self):
         """Retorna la hora en formato HH:MM:SS"""
         return f"{self.getHora():02d}:{self.getMinuto():02d}:{self.getSegundo():02d}"
+
+    def __repr__(self):
+        """Representación oficial del objeto para debugging"""
+        return f"Hora({self.getHora()}, {self.getMinuto()}, {self.getSegundo()})"
+
+    def __eq__(self, otra):
+        """Compara si dos horas son iguales"""
+        if not isinstance(otra, Hora):
+            return False
+        return (self.getHora() == otra.getHora() and 
+                self.getMinuto() == otra.getMinuto() and 
+                self.getSegundo() == otra.getSegundo())
+
+    def __lt__(self, otra):
+        """Compara si esta hora es menor que otra"""
+        if not isinstance(otra, Hora):
+            return NotImplemented
+        return (self.getHora(), self.getMinuto(), self.getSegundo()) < \
+               (otra.getHora(), otra.getMinuto(), otra.getSegundo())
 
     # ENCAPSULACIÓN EN PYTHON (Properties)
     hora = property(getHora, setHora)
