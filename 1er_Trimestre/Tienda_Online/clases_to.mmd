@@ -1,0 +1,25 @@
+classDiagram
+    class Producto{
+        - nombre: string
+        - precio: float
+        - cantidad: int
+        + añadir_pedido(int): bool
+        + incrementar_stock(int): bool
+    }
+    class Cliente{
+        - nombre: string
+        - email: string
+        - direccion: string
+        - codigo_postal: int
+
+    }
+    class Pedido{
+        - productos: list
+        - cliente: string
+        - fecha: string
+        + añadir_producto(): bool
+        + calculo_precio_total(): int
+        + calculo_IVE(float): float
+        + eliminarProducto(int): bool
+        + mostrar_cesta(list): string
+    }

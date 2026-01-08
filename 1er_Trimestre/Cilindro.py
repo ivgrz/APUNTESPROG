@@ -1,7 +1,5 @@
 import math
 
-from TiposBasicos import cadena
-from punto import Punto
 from POO.EjercicioTipo_1.circulo import Circulo
 
 class Cilindro(Circulo):
