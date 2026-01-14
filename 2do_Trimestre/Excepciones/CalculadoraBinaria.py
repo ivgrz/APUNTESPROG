@@ -16,12 +16,12 @@ class CalculadoraBinaria:
 		if isinstance(a, int) or isinstance(a, float):
 			self.__a = a
 		else:
-			raise ValueError(f"Caracter {a} no valido")
+			raise TypeError(f"Caracter {a} no tiene el tipo valido")
 	def set_b(self,b):
 		if isinstance(b, int) or isinstance(b, float):
 			self.__b = b
 		else:
-			raise ValueError(f"Caracter {b} no valido")
+			raise TypeError(f"Caracter {b} no tiene tipo valido")
 
 
 	def operacion(self,opcion):
