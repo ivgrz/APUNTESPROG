@@ -1,3 +1,4 @@
+from Dnierror import Dnierror
 from CalculadoraBinaria import  CalculadoraBinaria
 from Persona2 import Persona2
 from RegistroPersonas import RegistroPersonas
@@ -29,3 +30,8 @@ registro = RegistroPersonas()
 registro.agregar_personas(p1)
 registro.agregar_personas(p2)
 print(registro.mostrar_registro())
+
+try:
+    p3 = Persona2("Juan",edad=23,dni="8327432Y")
+except Dnierror as e:
+    print(e)
