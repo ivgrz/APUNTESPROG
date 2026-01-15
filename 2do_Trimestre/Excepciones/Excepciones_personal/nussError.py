@@ -27,3 +27,4 @@ class nussError(Exception):
 			if not char.isdigit():
 				raise nussError(f"Caracter no valido en posicion {i}: todos los caracteres deben ser digitos", nuss)
 			return True
+		return None
