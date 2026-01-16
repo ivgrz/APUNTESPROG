@@ -1,0 +1,13 @@
+Hola, soy Yo
+2026-01-15
+14:21:44.953033
+Termino y cierro el fichero
+Hola, soy Yo
+2026-01-15
+14:40:16.978791
+Termino y añado contenido al fichero
+
+Hola, soy Yo
+2026-01-16
+11:03:17.140330
+Termino y añado contenido al fichero
