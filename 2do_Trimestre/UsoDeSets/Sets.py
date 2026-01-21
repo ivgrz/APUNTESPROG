@@ -52,3 +52,21 @@ mis_apps.intersection_update(apps_productividad)
 
 print(mis_apps) # Resultado: {'WhatsApp'}
 
+programadores = {"Python", "Java", "C++", "JavaScript"}
+analistas = {"Excel", "SQL", "Python", "PowerBI"}
+
+# UNION (|): Todos los intereses (sin repetir Python)
+todos = programadores | analistas
+# {'Python', 'Java', 'C++', 'JavaScript', 'Excel', 'SQL', 'PowerBI'}
+
+# INTERSECCIÓN (&): Solo lo que tienen en común
+comun = programadores & analistas
+# {'Python'}
+
+# DIFERENCIA (-): Lo que tiene el primero que NO tiene el segundo
+solo_programadores = programadores - analistas
+# {'Java', 'C++', 'JavaScript'}
+
+# DIFERENCIA SIMÉTRICA (^): Lo que NO comparten (excluye la intersección)
+no_compartido = programadores ^ analistas
+# {'Java', 'C++', 'JavaScript', 'Excel', 'SQL', 'PowerBI'}
