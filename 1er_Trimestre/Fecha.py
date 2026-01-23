@@ -47,23 +47,6 @@ class Fecha:
 			case _:
 				raise Exception(f"Error: Tipo de dato no soportado para inicializar Fecha")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	def _es_bisiesto(self, anho):
 		return (anho % 4 == 0 and anho % 100 != 0) or (anho % 400 == 0)
 
