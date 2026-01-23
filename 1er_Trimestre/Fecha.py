@@ -1,19 +1,9 @@
-import math
 class Fecha:
-
-
-
-
-
 	def __init__(self,dia,mes,anho):
 
-		self.__mes = 1
-		self.__dia = 1
-		self.__anho = 1900
-
-		self.mes = mes
-		self.dia = dia
-		self.anho = anho
+		self.set_mes(mes)
+		self.set_dia(dia)
+		self.set_anho(anho)
 
 
 	def _es_bisiesto(self, anho):
@@ -42,55 +32,51 @@ class Fecha:
 		return True
 
 
-	"""
-	GETTERS
-	"""
-	@property
-	def dia(self):
+	# Métodos tradicionales get/set (encapsulación clásica)
+	def get_dia(self):
+		"""Devuelve el día."""
 		return self.__dia
-	@property
-	def mes(self):
-		return self.__mes
-	@property
-	def anho(self):
-		return self.__anho
-	"""
-	SETTERS
-	"""
-	@dia.setter
-	def dia(self,dia_n):
-		if 1 <= dia_n <= 31:
+
+	def set_dia(self, dia_n):
+		"""Asigna el día usando validación completa de fecha."""
+		# validar con mes y año actuales
+		if self._validar_fecha(dia_n, self.__mes, self.__anho):
 			self.__dia = dia_n
 		else:
-			print(f"El dia {dia_n} no es valido. No se aceptan mas de 31 dias")
-	@mes.setter
-	def mes(self,mes_nuevo):
-		if self._validar_fecha(self.__dia,self.__mes,self.__anho):
-			self.__mes = mes_nuevo
-			if not self._validar_fecha(self.__dia,self.__mes,self.__anho):
-				print(f"Cuidado: El dia {self.__dia} es demasiado alto para el mes{self.__mes}")
-				self.__dia = 1
+			print(f"Asignación de dia rechazada: {dia_n}")
 
+	def get_mes(self):
+		"""Devuelve el mes."""
+		return self.__mes
+
+	def set_mes(self, mes_nuevo):
+		"""Asigna el mes usando validación completa de fecha (considera el dia y año actuales)."""
+		if self._validar_fecha(self.__dia, mes_nuevo, self.__anho):
+			self.__mes = mes_nuevo
 		else:
-			print(f"Asignacion rechazada :c")
-	@anho.setter
-	def anho(self,anho_nuevo):
-		if self._validar_fecha(self.__dia,self.__mes,self.__anho):
+			print(f"Asignación de mes rechazada: {mes_nuevo}")
+
+	def get_anho(self):
+		"""Devuelve el año."""
+		return self.__anho
+
+	def set_anho(self, anho_nuevo):
+		"""Asigna el año usando validación completa de fecha (considera el dia y mes actuales)."""
+		if self._validar_fecha(self.__dia, self.__mes, anho_nuevo):
 			self.__anho = anho_nuevo
-			if not self._validar_fecha(self.__dia,self.__mes,self.__anho):
-				print(f"Cuidado: El dia {self.__dia} no es valido para el año {self.__anho}")
-				self.__dia = 1
 		else:
-			print(f"Asignacion rechazada")
+			print(f"Asignación de año rechazada: {anho_nuevo}")
+
+	# Encapsulación con propiedad tradicional: nombre = property(get, set)
+	# Esto permite el acceso clásico obj.dia y obj.dia = x, pero también deja disponibles
+	# los métodos get_*/set_* si se desean usar explícitamente.
+	dia = property(get_dia, set_dia)
+	mes = property(get_mes, set_mes)
+	anho = property(get_anho, set_anho)
+
+
 
 	def __str__(self):
 		estado_es_bisiesto = "SI" if self._es_bisiesto(self.anho) else "NO"
 		return (f"\n Fecha de nacimiento: {self.__dia}/{self.__mes}/{self.__anho}\n"
 				f"Este año {self.__anho} {estado_es_bisiesto} fue bisiesto")
-
-
-
-
-
-
-
