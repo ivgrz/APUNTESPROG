@@ -1,9 +1,67 @@
-class Fecha:
-	def __init__(self,dia,mes,anho):
+import time
+import datetime
+import re
 
-		self.set_mes(mes)
-		self.set_dia(dia)
-		self.set_anho(anho)
+class Fecha:
+	def __init__(self,d, *mesanho):
+		self.__dia = 1
+		self.__mes = 1
+		self.__anho = 1
+
+
+
+		match(d):
+			case int():
+
+				if len(mesanho) == 2:
+					mes, anho = mesanho
+					self.anho = anho
+					self.mes = mes
+					self.dia = d
+					print("Fecha creada con día, mes y año.")
+				else:
+					self.dia = d
+
+			case str():
+				partes = re.split(r"[-/]", d)
+				if len(partes) == 3:
+					self.anho = int(partes[2])
+					self.mes = int(partes[1])
+					self.dia = int(partes[0])
+					print("Fecha creada por texto")
+			case list()|tuple():
+				if len(d) == 3:
+					self.dia = d[0]
+					self.mes = d[1]
+					self.anho = d[2]
+				else:
+					raise Exception(f"Error: no hay suficientes elementos")
+			case dict():
+			# .Subset(d.keys()) funciona para comprobar si un conjunto está contenido en otro, en este caso las claves del diccionario
+				if {"dia","mes","año"}.issubset(d.keys()):
+					self.dia = d["dia"]
+					self.mes = d["mes"]
+					self.anho = d["anho"]
+				else:
+					raise Exception(f"Error: No se han proporcionado todas las claves necesarias")
+			case _:
+				raise Exception(f"Error: Tipo de dato no soportado para inicializar Fecha")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 	def _es_bisiesto(self, anho):
