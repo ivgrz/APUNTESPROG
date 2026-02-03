@@ -1,14 +1,14 @@
-from POO.EjercicioTipo_1.Cilindro import Cilindro
-from POO.EjercicioTipo_1.Esfera import Esfera
-from circulo import Circulo
-from punto import Punto
-from Ejercicios_propuestos.persona import Persona
-from Cilindro import Cilindro
-from Esfera import Esfera
-from cono import Cono
-from Tronco_cono import Cono_truncado
-from Punto2 import Punto2
-from Ejercicios_propuestos.Fecha import Fecha
+from Geometria.circulo import Circulo
+from Geometria.Solidos.Cilindro import Cilindro
+from Geometria.Solidos.Esfera import Esfera
+from Geometria.Solidos.Tronco_cono import Cono_truncado
+from Geometria.Solidos.cono import Cono
+from Geometria.punto import Punto
+from Geometria.Punto2 import Punto2
+from FechaTiempo import Fecha
+from Primer_Trimestre.persona import Persona
+
+
 import sys
 
 
@@ -63,7 +63,7 @@ def solicitar_datos_persona(fecha_nac):
 if __name__ == '__main__':
     print(f"\n---FIGURAS---\n")
 
-    c = Circulo(4, 3, 5)
+    c = (4, 3, 5)
     print(c.Cadena())
 
     ci = Cilindro(4, 3, 5, 6)

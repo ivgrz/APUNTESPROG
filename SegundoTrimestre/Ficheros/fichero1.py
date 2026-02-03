@@ -4,7 +4,7 @@ import datetime
 fichero = None
 try:
     # Ruta de tu archivo
-    fichero = open('/Users/vnangz/Library/CloudStorage/GoogleDrive-ivangxz1403@gmail.com/Mi unidad/APUNTESPROG/1er_Trimestre/Ejercicio1/Ejercicio_Ahorcado.py', 'r')
+    fichero = open('/Primer_Trimestre/Ejercicio1/Ejercicio_Ahorcado.py', 'r')
     for linea in fichero:
         print(linea)
 except:
