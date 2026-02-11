@@ -1,7 +1,7 @@
-from Fecha import Fecha
+from typing import Any
 
 class Persona:
-	def __init__(self, nombre, edad, dni, direccion, nacionalidad, fecha_nacimiento: Fecha):
+	def __init__(self, nombre, edad, dni, direccion, nacionalidad, fecha_nacimiento: Any):
 		self.nombre = nombre
 
 		if self.comprobaredad(edad):
@@ -26,12 +26,12 @@ class Persona:
 	def comprobardni(self, dni):
 
 		if len(dni) == 9 and  dni[:-1].isdigit() and dni[-1:].isalpha():
-					letraDni = 'TRWAGMYFPDXBNJZSQVHLCKE'
-					resto = int(dni[:-1]) % 23
-					if letraDni[resto] == dni[-1].upper():
-						return True
-					else:
-						return False
+				letraDni = 'TRWAGMYFPDXBNJZSQVHLCKE'
+				resto = int(dni[:-1]) % 23
+				if letraDni[resto] == dni[-1].upper():
+					return True
+				else:
+					return False
 		else:
 			return False
 	def __str__(self):

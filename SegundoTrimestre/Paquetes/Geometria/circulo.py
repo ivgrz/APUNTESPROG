@@ -1,6 +1,6 @@
 import math
 
-from punto import Punto
+from .punto import Punto
 
 class Circulo (Punto):
 	def __init__(self,x,y, radio):

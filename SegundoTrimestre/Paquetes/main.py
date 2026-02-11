@@ -63,7 +63,7 @@ def solicitar_datos_persona(fecha_nac):
 if __name__ == '__main__':
     print(f"\n---FIGURAS---\n")
 
-    c = (4, 3, 5)
+    c = Circulo(4, 3, 5)
     print(c.Cadena())
 
     ci = Cilindro(4, 3, 5, 6)

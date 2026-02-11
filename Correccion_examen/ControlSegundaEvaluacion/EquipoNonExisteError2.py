@@ -1,0 +1,1 @@
+class EquipoNonExisteError2(Exception):

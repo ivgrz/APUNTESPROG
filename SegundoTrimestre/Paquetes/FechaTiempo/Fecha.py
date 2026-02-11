@@ -38,7 +38,7 @@ class Fecha:
 					raise Exception(f"Error: no hay suficientes elementos")
 			case dict():
 			# .Subset(d.keys()) funciona para comprobar si un conjunto está contenido en otro, en este caso las claves del diccionario
-				if {"dia","mes","año"}.issubset(d.keys()):
+				if {"dia","mes","anho"}.issubset(d.keys()):
 					self.dia = d["dia"]
 					self.mes = d["mes"]
 					self.anho = d["anho"]

@@ -1,6 +1,6 @@
 import math
 
-from POO.EjercicioTipo_1.circulo import Circulo
+from ..circulo import Circulo
 
 class Cilindro(Circulo):
 	def __init__(self,x=0.0,y=0.0,radio=1.0,altura=1.0):
@@ -23,4 +23,3 @@ class Cilindro(Circulo):
 
 	def __str__(self):
 		return self.Cadena()
-

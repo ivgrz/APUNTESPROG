@@ -1,5 +1,5 @@
 import math
-from circulo import Circulo
+from ..circulo import Circulo
 
 
 class Cono(Circulo):

@@ -1,6 +1,6 @@
 import math
 
-from cono import Cono
+from .cono import Cono
 
 class Cono_truncado(Cono):
 	def __init__(self,x,y,rm,h,rmen):
@@ -24,7 +24,8 @@ class Cono_truncado(Cono):
 		r = self.rmen
 		h = self.h
 
-		return (1/3) * math.pi	* h * (R**2 * r**2 + R*r)
+		# Fórmula correcta del volumen del tronco de cono: (1/3) * pi * h * (R^2 + R*r + r^2)
+		return (1/3) * math.pi * h * (R**2 + R*r + r**2)
 
 	def __str__(self):
 		return (f"---- CREAMOS CONO TRUNCADO ----\n"
@@ -32,6 +33,5 @@ class Cono_truncado(Cono):
 				f"Radio mayor : {self.radio}\n"
 				f"Radio menor : {self.rmen}\n"
 				f"Altura: {self.h}\n"
-				f"Area: {self.CalcularAreaTotal()}\n"
+				f"Area: {self.calcularArea()}\n"
 				f"Volumen: {self.calcularVolumen()}")
-
