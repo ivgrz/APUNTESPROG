@@ -1,4 +1,4 @@
-from ExamenControlSegundoTrimestre.Examen_Corregido.equipo2 import Equipo
+from Correccion_examen.ControlSegundaEvaluacion.equipo2 import Equipo
 from EquipoNonExisteError2 import EquipoNonExisteError2
 
 class Torneo2:
@@ -60,6 +60,21 @@ class Torneo2:
 		return self.equipos_list
 	def get_equipo(self):
 		return self.equipos_list
+	def get_clasificacion(self):
+		l_aux = self.equipos_list[:]
+		lClasificacion = []
+
+		while len(l_aux) > 1:
+			ind_max = 0
+			for i in range(len(l_aux)-1):
+				if l_aux[ind_max].equipo.get_puntos()<l_aux[i+1].equipo.get_puntos():
+					ind_max = i+1
+			lClasificacion.append(l_aux.pop(ind_max))
+		lClasificacion.append(l_aux[0])
+		return lClasificacion
+
+
+
 	def registrar_encuentro(self, encuentro_resultado:str):
 		partes = encuentro_resultado.strip().split()
 		if len(partes) != 2:
