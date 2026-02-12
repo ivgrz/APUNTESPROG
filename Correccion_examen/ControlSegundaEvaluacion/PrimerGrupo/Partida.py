@@ -11,14 +11,12 @@ class Partida:
 		else:
 			raise ValueError("Formato invalido")
 
+	def get_jugador(self, nombre):
 
+		for jugador in self.__jugadores:
+			if jugador.nombre == nombre:
+				return self.__jugadores[jugador]
+		return None
 
-
-	def get_jugador(self, jugador):
-		for i in self.__jugadores:
-			if i == jugador:
-				return self.__jugadores[i]
-			else:
-				raise ValueError("Este jugador no existe")
 
 
