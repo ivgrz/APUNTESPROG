@@ -1,4 +1,4 @@
-from Correccion_examen.ControlSegundaEvaluacion.equipo2 import Equipo
+from Correccion_examen.ControlSegundaEvaluacion.SegundoGrupo.equipo2 import Equipo
 from EquipoNonExisteError2 import EquipoNonExisteError2
 
 class Torneo2:

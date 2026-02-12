@@ -1,6 +1,6 @@
-from Correccion_examen.ControlSegundaEvaluacion.Torneo2 import Torneo2
-from Correccion_examen.ControlSegundaEvaluacion.equipo2 import Equipo
-from Correccion_examen.ControlSegundaEvaluacion.EquipoNonExisteError2 import EquipoNonExisteError2
+from Correccion_examen.ControlSegundaEvaluacion.SegundoGrupo.Torneo2 import Torneo2
+from Correccion_examen.ControlSegundaEvaluacion.SegundoGrupo.equipo2 import Equipo
+from Correccion_examen.ControlSegundaEvaluacion.SegundoGrupo.EquipoNonExisteError2 import EquipoNonExisteError2
 
 class Torneo_Gestor:
 	# inicializar con un nombre por defecto para evitar error al crear Torneo2 sin argumentos
