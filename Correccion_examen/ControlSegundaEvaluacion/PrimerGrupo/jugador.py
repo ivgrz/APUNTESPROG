@@ -32,6 +32,10 @@ class jugadori:
 		else:
 			self.__edad = 0
 
+	def sumar_puntos(self, puntos):
+		self.puntuacion += puntos
+		return self.puntuacion
+
 
 
 
