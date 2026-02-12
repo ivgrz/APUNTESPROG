@@ -14,6 +14,7 @@ if __name__ == '__main__':
 	p1.add_jugador(x4)
 
 	p1.get_jugador_con_min_puntos(15)
+	p1.add_puntos_a_jugador("Carla 20")
 
 
 

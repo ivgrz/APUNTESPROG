@@ -1,4 +1,5 @@
 from jugador import jugadori
+from JugadorNoExisteError import JugadorNoExisteError
 class Partida:
 	def __init__(self, num_jugadores):
 		self.__jugadores = []
@@ -35,8 +36,11 @@ class Partida:
 		n_s = nombre
 		p_s = puntuacion
 		jugador = self.get_jugador(n_s)
-		if jugador:
+		if jugador is not None:
 			jugador.sumar_puntos(p_s)
+			return jugador.puntuacion()
+		else:
+			raise JugadorNoExisteError("Error: No existe jugador con ese nombre")
 
 
 
