@@ -36,6 +36,9 @@ class jugadori:
 		self.puntuacion += puntos
 		return self.puntuacion
 
+	def __str__(self):
+		return f"Jugador: {self.nombre}, Puntuación: {self.puntuacion}, Edad: {self.edad}"
+
 
 
 

@@ -7,7 +7,7 @@ class Partida:
 
 	def add_jugador(self, jugador:jugadori):
 
-		if isinstance(jugador, object) | len(self.__jugadores) < self._num_max_jugadores:
+		if len(self.__jugadores) < self._num_max_jugadores:
 			self.__jugadores.append(jugador)
 			return len(self.__jugadores)-1
 		else:
@@ -17,7 +17,7 @@ class Partida:
 
 		for jugador in self.__jugadores:
 			if jugador.nombre == nombre:
-				return self.__jugadores[jugador]
+				return jugador
 		return None
 
 	def get_jugadores(self):
@@ -25,7 +25,7 @@ class Partida:
 
 	def get_jugador_con_min_puntos(self, puntos):
 		for jugador in self.__jugadores:
-			if jugador.puntuacion() >= puntos:
+			if jugador.puntuacion >= puntos:
 				return jugador
 		return -1
 
@@ -37,10 +37,10 @@ class Partida:
 		p_s = puntuacion
 		jugador = self.get_jugador(n_s)
 		if jugador is not None:
-			jugador.sumar_puntos(p_s)
-			return jugador.puntuacion()
+			jugador.sumar_puntos(int(p_s))
+			return jugador.puntuacion
 		else:
-			raise JugadorNoExisteError("Error: No existe jugador con ese nombre")
+			raise JugadorNoExisteError("Error: No existe jugador con ese nombre", n_s)
 
 
 

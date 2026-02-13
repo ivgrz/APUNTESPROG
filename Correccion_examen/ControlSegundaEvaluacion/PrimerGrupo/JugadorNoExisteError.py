@@ -1,8 +1,9 @@
 class JugadorNoExisteError(Exception):
-	def __init__(self, mensaje, jugador):
-		super().__init__(mensaje)
-		self.mensaje = mensaje
-		self.jugador = jugador
+	"""Excepción que se lanza cuando un jugador no existe"""
+
+	def __init__(self, mensaje):
+		self.__mensaje = mensaje
 
 	def __str__(self):
-		return "Error: " + str(self.mensaje)
+		return "JugadorNoExisteError: " + self.__mensaje
+
