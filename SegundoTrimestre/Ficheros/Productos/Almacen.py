@@ -1,4 +1,5 @@
 from Producto import Producto
+import pickle
 import csv
 
 
@@ -25,10 +26,23 @@ class Almacen:
         self.lista_productos.append(p)
 
     def guardar_producto(self, fichero):
-        with open(fichero, 'w', newline='') as f:
+        with open(fichero, 'w', newline='', encoding='utf-8') as f:
             writerf = csv.DictWriter(
                 f, fieldnames=['nombre', 'cantidad', 'precio'])
             writerf.writeheader()
             for p in self.lista_productos:
                 writerf.writerow(
                     {'nombre': p.nombre, 'cantidad': p.cantidad, 'precio': p.precio})
+
+    def guardar_datos_binarios(self, ruta):
+        with open(ruta, 'wb') as f:
+            pickle.dump(self.lista_productos, f)
+
+    def leer_datos_binarios(self):
+        try:
+            with open("productos.pkl", "rb") as f:
+                datos = pickle.load(f)
+                for linea in datos:
+                    print(linea)
+        except FileNotFoundError:
+            print("No hay una copia guardada")

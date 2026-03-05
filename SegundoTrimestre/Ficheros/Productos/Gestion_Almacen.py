@@ -11,7 +11,9 @@ class Gestion_Almacen:
             print("__________________________________")
             print("1. Listar Productos")
             print("2. Añadir Producto")
-            print("3. Salir")
+            print("3. Exportar copia en binario")
+            print("4. Leer datos .pkl")
+            print("5. Salir")
 
             opcion = input("Elige una opcion: ")
             match opcion:
@@ -20,7 +22,12 @@ class Gestion_Almacen:
                 case '2':
                     self.almacen.anadir_producto()
                 case '3':
+                    self.almacen.guardar_datos_binarios("productos.pkl")
+                case '4':
+                    self.almacen.leer_datos_binarios()
+                case '5':
                     self.almacen.guardar_producto(self.almacen.ruta)
+                    print("Guardando...")
                     break
 
     def mostrar_productos(self):
