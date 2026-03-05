@@ -1,13 +1,26 @@
 from TorneoXestor2 import Torneo_Gestor
 from Torneo2 import Torneo2
+from equipo2 import Equipo
 
 if __name__ == '__main__':
-    # gestor = Torneo_Gestor()
-    # gestor.bucle_principal()
-    # FIX: Torneo2 requiere 'nome' como argumento obligatorio (antes se llamaba sin argumentos)
+    # Crear equipos manualmente según los datos del CSV
+    celta    = Equipo("Celta",   ganhados=1, perdidos=0, empates=0)
+    sevilla  = Equipo("Sevilla", ganhados=0, perdidos=1, empates=0)
+    espanol  = Equipo("Español", ganhados=0, perdidos=1, empates=0)
+    girona   = Equipo("Girona",  ganhados=1, perdidos=0, empates=0)
+    betis    = Equipo("Betis",   ganhados=0, perdidos=1, empates=0)
+    villareal = Equipo("Villareal", ganhados=1, perdidos=0, empates=0)
+
     torneo = Torneo2("Torneo4aXornada")
-    # FIX: movido dentro del bloque if __name__ (antes estaba fuera y se ejecutaba siempre al importar)
-    # torneo.importar_resultados_fichero2(
-    # '/Users/vnangz/Library/CloudStorage/GoogleDrive-ivangxz1403@gmail.com/Mi unidad/APUNTESPROG/Correccion_examen/ControlSegundaEvaluacion/SegundoGrupo/resultados4xornada.csv')
-    torneo.importar_resultados_csv_diccionario(
-        '/Users/vnangz/Library/CloudStorage/GoogleDrive-ivangxz1403@gmail.com/Mi unidad/APUNTESPROG/Correccion_examen/ControlSegundaEvaluacion/SegundoGrupo/resultados4xornada.csv')
+    torneo.add_equipo(celta)
+    torneo.add_equipo(sevilla)
+    torneo.add_equipo(espanol)
+    torneo.add_equipo(girona)
+    torneo.add_equipo(betis)
+    torneo.add_equipo(villareal)
+
+    # Exportar clasificacion ordenada por puntos al fichero CSV
+    import os
+    ruta_clasificacion = os.path.join(os.path.dirname(__file__), "clasificacion.csv")
+    torneo.importar_resultados_clasificacion_csv(nomefich=ruta_clasificacion)
+    print("Clasificacion exportada a 'clasificacion'")

@@ -1,11 +1,12 @@
 nombre,cantidad,precio
 Laptop,5,899.99
-Monitor,10,299.50
+Monitor,10,299.5
 Teclado,25,79.99
-Ratón,30,25.50
+Ratón,30,25.5
 Auriculares,15,149.99
 USB C Cable,50,12.99
 Adaptador HDMI,20,19.99
 Webcam,8,89.99
 Almacenamiento Externo,12,129.99
 Ventilador USB,35,34.99
+reloj,10,40.0

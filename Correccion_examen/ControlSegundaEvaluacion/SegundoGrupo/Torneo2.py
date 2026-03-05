@@ -73,6 +73,10 @@ class Torneo2:
         l_aux = self.equipos_list[:]
         lClasificacion = []
 
+        # Si no hay equipos, devolver lista vacía para evitar IndexError
+        if not l_aux:
+            return lClasificacion
+
         while len(l_aux) > 1:
             ind_max = 0
             for i in range(len(l_aux)-1):
@@ -80,7 +84,9 @@ class Torneo2:
                 if l_aux[ind_max].get_puntos() < l_aux[i+1].get_puntos():
                     ind_max = i+1
             lClasificacion.append(l_aux.pop(ind_max))
-        lClasificacion.append(l_aux[0])
+        # Finalmente, si queda al menos un elemento, añadirlo
+        if l_aux:
+            lClasificacion.append(l_aux[0])
         return lClasificacion
 
     def _find_team(self, name):
@@ -150,7 +156,31 @@ class Torneo2:
             fich_csv = csv.DictReader(fichero)
             for fila in fich_csv:
                 # print(fila)
-                print(fila["Visitante"])
+                # Usar la clave exacta del header; si hay espacios en el CSV, puede fallar.
+                # Strip de claves y valores para mayor robustez.
+                # Construimos un diccionario con claves limpiadas.
+                fila_lim = {k.strip(): v.strip() if isinstance(
+                    v, str) else v for k, v in fila.items()}
+                if 'Visitante' in fila_lim:
+                    print(fila_lim['Visitante'])
+                else:
+                    # Si no existe la clave, imprime la fila completa para depurar
+                    print(fila_lim)
+
+    def importar_resultados_clasificacion_csv(self, nomefich):
+        """
+        Crea un fichero con claificacion del torneo en formato CSV
+        :param nomeFich: nombre del fichero donde se guarda
+        """
+        clasificacion = self.get_clasificacion()
+        with open(nomefich, "w", newline="") as ficherocsv:
+            cabecera = ['nome', 'puntuacion']
+            writer = csv.DictWriter(ficherocsv, fieldnames=cabecera)
+            writer.writeheader()
+            for equipo in clasificacion:
+                nome = equipo.nome
+                puntuacion = equipo.get_puntos()
+                writer.writerow({'nome': nome, 'puntuacion': puntuacion})
 
     def exportar_resultados_txt(self, ruta):
         """Crea un fichero .txt con los resultados en formato tabulado.
@@ -184,4 +214,3 @@ class Torneo2:
                         #     self.registrar_encuentro(cadena)
                         # except ValueError as e:
                         #     print(e)
-
